@@ -6,7 +6,7 @@ def home(request):
     import json
 
     # Grab Crypto Price data
-    price_request = requests.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,XRP&tsyms=USD,EUR,GBP")
+    price_request = requests.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,UDST,BNB,ADA,DOGE,XRP,USDC,DOT,UNI&tsyms=USD,EUR,GBP")
     price = json.loads(price_request.content)
 
     #Grab Crypto News

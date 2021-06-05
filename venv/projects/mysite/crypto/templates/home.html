@@ -2,10 +2,13 @@
 
 {% block content %}
 
-
-
     {% for key, value in price.DISPLAY.items %}
-        {{ key }} - {{ value.USD.PRICE }} <br/>
+        <strong>Name: </strong>{{ key }}<br/>
+        <strong>Price: </strong>{{ value.USD.PRICE }} <br/>
+        <strong>Daily High: </strong>{{ value.USD.HIGHDAY }}<br/>
+        <strong>Daily Low: </strong>{{ value.USD.LOWDAY }}<br/>
+        <strong>Market Cap: </strong>{{ value.USD.MKTCAP }}<br/>
+        <br/><br/>
     {% endfor %}
 
     <br/><br/>
