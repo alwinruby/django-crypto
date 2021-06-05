@@ -2,14 +2,24 @@
 
 {% block content %}
 
-    {{ price.DISPLAY }}
 
+
+    {% for key, value in price.DISPLAY.items %}
+        {{ key }} - {{ value.USD.PRICE }} <br/>
+    {% endfor %}
+
+    <br/><br/>
+
+    {{ price.DISPLAY }}
+    <br/>
     <div class="jumbotron">
       <h1 class="display-4">BIT COIN NEWS!</h1>
       <p class="lead">Your source for the latest crytocurrency news</p>
       </p>
     </div>
+
     <br/>
+
     <div class="container">
         <div class="row">
             {% for x in api.Data %}
