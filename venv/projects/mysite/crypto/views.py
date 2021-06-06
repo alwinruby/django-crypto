@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+
 # Create your views here.
 def home(request):
     import requests
@@ -14,3 +15,6 @@ def home(request):
     api = json.loads(api_request.content)
 
     return render(request, 'home.html', { 'api': api, 'price': price })
+
+def prices(request):
+    return render(request, 'prices.html', {})
