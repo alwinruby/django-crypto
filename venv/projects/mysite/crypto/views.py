@@ -18,7 +18,14 @@ def home(request):
 
 def prices(request):
     if request.method == 'POST':
-        qoute = request.POST['quote']
-        return render(request, 'prices.html', { 'quote':qoute })
+        import requests
+        import json
+
+        quote = request.POST['quote']
+        quote = quote.upper()
+        crypto_request = requests.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms="+ quote +"&tsyms=USD,EUR,GBP")
+        crypto = json.loads(crypto_request.content)
+        return render(request, 'prices.html', { 'quote':quote, 'crypto':crypto })
+
     else:
         return render(request, 'prices.html', {})
