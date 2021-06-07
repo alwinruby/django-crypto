@@ -1,6 +1,5 @@
 from django.shortcuts import render
 
-
 # Create your views here.
 def home(request):
     import requests
@@ -28,4 +27,5 @@ def prices(request):
         return render(request, 'prices.html', { 'quote':quote, 'crypto':crypto })
 
     else:
-        return render(request, 'prices.html', {})
+        notfound = "Enter a crypto currency symbol into the search..."
+        return render(request, 'prices.html', {'notfound': notfound})
